@@ -1,5 +1,7 @@
 export default function SideBar(){
     return(
-        <div style={{ display: 'inline-block',width: 341, height: 858, paddingTop: 166, background: '#D9D9D9'}}></div>
+        <div style={{ width: '15%', height: '100%', display: 'flex', alignItems: 'flex-end'}}>
+            <div style={{background: '#D9D9D9', height: '90%', width: '100%'}}></div>
+        </div>
     )
 }

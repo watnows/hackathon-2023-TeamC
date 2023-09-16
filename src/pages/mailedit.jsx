@@ -2,7 +2,7 @@
 
 export default function Mailedit() {
     return (
-        <div style={{width: '100%', height: "100vh", overflow: "hidden"}}>
+        <div style={{width: '100%', height: "100vh"}}>
             <div style={{ background: '#8cd790' }}>
                 <div style={{ color: 'white', fontSize: 38, fontWeight: "lighter", letterSpacing: 5, textAlign: 'center' }}>就活メールつくるくん</div>
             </div>
