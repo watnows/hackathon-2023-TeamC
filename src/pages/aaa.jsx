@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
     // kanta-confliブランチを作りました
+
     const handleClick = () => {
         window.alert("hello world")
     }
