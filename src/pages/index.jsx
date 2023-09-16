@@ -1,9 +1,9 @@
-
+import SideBar from "@/components/side"
 
 export default function Home() {
   return (
     <main>
-      hello world
+      <SideBar></SideBar>
     </main>
   )
 }
