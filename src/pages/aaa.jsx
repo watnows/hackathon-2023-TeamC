@@ -2,6 +2,7 @@ import Link from "next/link";
 
 
 export default function Home() {
+    //kantaブランチでつくりました
     const handleClick = () => {
         window.alert("hello world")
     }
