@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
+import Router from 'next/router'
 
 const StyledTextArea=styled.textarea`
     width: 100%;
@@ -52,16 +53,18 @@ export default function Mailedit() {
         }
     }
 
-  
+    const backClick = () => {
+        Router.push('/home')
+    }
 
     return (
         <div style={{ width: '100%', height: "100vh" }}>
             <div style={{ background: '#8cd790' }}>
                 <div style={{ color: 'white', fontSize: 38, fontWeight: "lighter", letterSpacing: 5, textAlign: 'center' }}>就活メールつくるくん</div>
             </div>
-            <img src="/logo_undo.svg" style={{ height: 50 }}></img>
+            <img onClick={backClick} src="/logo_undo.svg" style={{ height: 50 }}></img>
             <div style={{width: '70%', margin: 'auto', marginTop: 35, height: '60%', position: 'relative' }} className="scroll-mail"><div style={{ width: '95%', height: '100%', float: 'left' }}>
-                <StyledTextArea disabled={judge} onChange={onHandleSetText}>{text}</StyledTextArea></div>
+                <StyledTextArea disabled={judge} onChange={onHandleSetText} value={text}/></div>
                 <img src="/logo_copy.svg" style={{ width: '5%', position: 'absolute', bottom: 0, right: 0}} onClick={copyText}></img>
             </div>
             <div style={{ float: "left", marginTop: 60, width: '100%', textAlign: 'center' }}>
