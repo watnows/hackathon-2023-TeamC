@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 
-export default function Homeee() {
+export default function Home() {
     const handleClick = () => {
         window.alert("hello world")
     }
