@@ -13,9 +13,12 @@ import {useEffect, useState} from "react";
 export default function Home() {
     const [paneState, setPaneState] = useState('日程調節');
     const [companyName, setCompanyName] = useState('');
+    const [majorName, setMajorName] = useState('');
+    const [name, setName] = useState('');
+    const [dateandtime, setDateandtime] = useState([]);
 
     return (
-        <div style={{width: '100vw', height: '100vh', display: 'flex', alignItems: 'stretch'}}>
+        <div style={{width: '100%', height: '100vh', display: 'flex', alignItems: 'stretch'}}>
             <SideBarDesign menuStatusSetter={setPaneState}/>
 
             <div style={{width: '85%'}}>
@@ -26,7 +29,7 @@ export default function Home() {
                     switch (paneState) {
                         case '日程調節':
                             return <AdjustSchedulePane
-                            companyName={companyName} setCompanyName={setCompanyName} />;
+                            setCompanyName={setCompanyName} setMajorName={setMajorName} setName={setName} setDateandtime={setDateandtime} dateandtime={dateandtime} />;
                         case '謝罪':
                             return <ApologyPane/>;
                         case '辞退':
@@ -37,7 +40,7 @@ export default function Home() {
                 })()}
 
                 <Create
-                companyName={companyName} />
+                companyName={companyName} majorName={majorName} name={name} dateandtime={dateandtime} />
             </div>
             <Square/>
         </div>
@@ -48,9 +51,10 @@ function AdjustSchedulePane(props) {
     return (
         <div>
             <Frame
-            companyName={props.companyName} setCompanyName={props.setCompanyName}/>
-            <YourNameInput/>
-            <Date/>
+            setCompanyName={props.setCompanyName}/>
+            <YourNameInput  
+            setCompanyName={props.setMajorName} setMajorName={props.setMajorName} setName={props.setName} />
+            <Date setDateandtime={props.setDateandtime} dateandtime={props.dateandtime} />
         </div>
     )
 }
