@@ -21,19 +21,19 @@ export default function SideBarDesign({menuStatusSetter}) {
         <div style={{width: '15%', height: '100%', display: 'flex', alignItems: 'flex-end'}}>
             <div style={{width: '100%', height: '90%', backgroundColor: '#D9D9D9'}}>
                 <details>
-                    <summary style={CaseDesign} class="syukatsu">就活</summary>
+                    <summary style={CaseDesign} className="syukatsu">就活</summary>
 
                     <div style={RadioDesign} onClick={() => {
                         handleRadioChange("日程調節")
                     }}>
                         <input type="radio" name="work" id="bottun-1" value="日時調節"/>
-                        <label for="bottun-1">日時調節</label>
+                        <label htmlFor="bottun-1">日時調節</label>
                     </div>
                     <div style={RadioDesign} onClick={() => {
                         handleRadioChange("お礼")
                     }}>
                         <input type="radio" name="work" id="bottun-2" value="お礼"/>
-                        <label for="bottun-2">お礼</label>
+                        <label htmlFor="bottun-2">お礼</label>
                     </div>
                     <div style={RadioDesign} onClick={() => {
                         handleRadioChange("応募")
@@ -45,19 +45,19 @@ export default function SideBarDesign({menuStatusSetter}) {
                         <input type="radio" name="work" id="bottun-4" value="辞退" onClick={() => {
                             handleRadioChange("辞退")
                         }}/>
-                        <label for="bottun-4">辞退</label>
+                        <label htmlFor="bottun-4">辞退</label>
                     </div>
                     <div style={RadioDesign}>
-                        <input type="radio" name="work" id="bottun-5" value="受託" onClick={() => {
-                            handleRadioChange("受託")
+                        <input type="radio" name="work" id="bottun-5" value="承諾" onClick={() => {
+                            handleRadioChange("承諾")
                         }}/>
-                        <label for="bottun-5">受託</label>
+                        <label htmlFor="bottun-5">承諾</label>
                     </div>
                     <div style={RadioDesign}>
                         <input type="radio" name="work" id="bottun-6" value="謝罪" onClick={() => {
                             handleRadioChange("謝罪")
                         }}/>
-                        <label for="bottun-6">謝罪</label>
+                        <label htmlFor="bottun-6">謝罪</label>
                     </div>
                 </details>
             </div>
