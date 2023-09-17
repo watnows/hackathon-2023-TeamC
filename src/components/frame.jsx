@@ -3,7 +3,6 @@ export default function Frame(props) {
     const updateCompanyName = (e) => {
         props.setCompanyName(e.target.value)
     }
-
     return (
         <div style={{width: '100%'}}>
             <div style={{width: '70%', margin:'auto', marginTop:'10%'}}>
