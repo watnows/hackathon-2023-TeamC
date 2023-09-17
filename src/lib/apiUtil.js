@@ -1,11 +1,21 @@
-async function makeMsgToAdjustSchedule({newDatesArray, pastDate, companyName, contactPersonName, name, reason}) {
+// 1. 日程調整
+async function makeMsgToAdjustSchedule(
+                                           newDatesArray,
+                                           pastDate,
+                                           companyName,
+                                           contactPersonName,
+                                           name,
+                                           belonging,
+                                           reason
+                                       ) {
 
     const data = {
         new_date: newDatesArray,
         past_date: pastDate,
-        company_name: companyName,
+        company: companyName,
         contact_person_name: contactPersonName,
         name: name,
+        belonging: belonging,
         reason: reason
     }
 
@@ -13,33 +23,66 @@ async function makeMsgToAdjustSchedule({newDatesArray, pastDate, companyName, co
     return result;
 }
 
-
-async function makeMsgToApology({company, contact_person_name, name, what, situation}) {
+// 2. お詫び
+async function makeMsgToApology(company, contact_person_name, name, belonging, what, situation) {
 
     const data = {
         company: company,
         contact_person_name: contact_person_name,
         name: name,
         what: what,
-        situation: situation
+        situation: situation,
+        belonging: belonging
     }
 
     const result = await sendCommonRequest(process.env.NEXT_PUBLIC_API_URL + '/api/apology', data);
     return result;
 }
 
-async function makeMsgToAskToRefuse({company, contact_person_name, name, reason}) {
+// 3.内定辞退
+async function makeMsgToAskToRefuse(company, contact_person_name, name, belonging, reason) {
 
-        const data = {
-            company: company,
-            contact_person_name: contact_person_name,
-            name: name,
-            reason: reason
-        }
+    const data = {
+        company: company,
+        contact_person_name: contact_person_name,
+        name: name,
+        belonging: belonging,
+        reason: reason
+    }
 
-        const result = await sendCommonRequest(process.env.NEXT_PUBLIC_API_URL + '/api/refusal', data);
-        return result;
+    const result = await sendCommonRequest(process.env.NEXT_PUBLIC_API_URL + '/api/refusal', data);
+    return result;
 }
+
+// 4.内定承諾
+async function makeMsgToAskToReceiveOffer(company, contact_person_name, name, belonging) {
+
+    const data = {
+        company: company,
+        contact_person_name: contact_person_name,
+        name: name,
+        belonging: belonging,
+    }
+
+    const result = await sendCommonRequest(process.env.NEXT_PUBLIC_API_URL + '/api/acceptance', data);
+    return result;
+}
+
+// 5. お礼
+async function makeMsgToThank(company, contact_person_name, name, belonging, situation) {
+
+    const data = {
+        company: company,
+        contact_person_name: contact_person_name,
+        name: name,
+        situation: situation,
+        belonging: belonging
+    }
+
+    const result = await sendCommonRequest(process.env.NEXT_PUBLIC_API_URL + '/api/thank', data);
+    return result;
+}
+
 
 async function sendCommonRequest(url, sendData) {
     const res = await fetch(url, {
@@ -58,3 +101,5 @@ async function sendCommonRequest(url, sendData) {
 
     return data;
 }
+
+export {sendCommonRequest,makeMsgToAdjustSchedule, makeMsgToApology, makeMsgToAskToRefuse, makeMsgToAskToReceiveOffer, makeMsgToThank};
