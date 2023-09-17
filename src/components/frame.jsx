@@ -1,4 +1,8 @@
 export default function Frame() {
+    // const updateCompanyName = (e) => {
+    //     setCompanyName(e.target.value)
+    //     // console.log(e.target.value)
+    // }
     return (
         <div style={{width: '100%'}}>
             <div style={{width: '70%', margin:'auto', marginTop:'10%'}}>
