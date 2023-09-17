@@ -41,7 +41,7 @@ function RepeatDate(props) {
                 </div>
             </div>
             <div>
-                <button style={{ width: '4rem', height: '2rem', marginLeft: '1rem', marginTop: '2rem' }} onClick={updateDate}>追加</button>
+                <button style={{ width: '4rem', height: '2rem', marginLeft: '1rem', marginTop: '2rem'}} onClick={updateDate} disabled={props.dateandtime.length > 3}>追加</button>
             </div>
 
         </div>

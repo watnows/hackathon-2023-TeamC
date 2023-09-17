@@ -76,7 +76,7 @@ export default function Mailedit() {
             </div>
             <img onClick={backClick} src="/logo_undo.svg" style={{ height: 50 }}></img>
             <div style={{width: '70%', margin: 'auto', marginTop: 35, height: '5%'}}>
-                <input onChange={onHandleSetTitleText} style={{width: '95%', height: '100%', border: 'none', resize: 'none', background: '#D9D9D9', outline: 'none'}} value={titletext}></input>
+                <input disabled={judge} onChange={onHandleSetTitleText} style={{width: '95%', height: '100%', border: 'none', resize: 'none', background: '#D9D9D9', outline: 'none'}} value={titletext}></input>
             </div>
             <div style={{width: '70%', margin: 'auto', marginTop: 5, height: '55%', position: 'relative' }} className="scroll-mail"><div style={{ width: '95%', height: '100%', float: 'left' }}>
                 <StyledTextArea disabled={judge} onChange={onHandleSetText} value={maintext}/></div>
