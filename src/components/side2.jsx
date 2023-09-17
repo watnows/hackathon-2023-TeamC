@@ -1,91 +1,128 @@
-import { useEffect,useState } from "react"
+import { useEffect, useState } from "react"
 
-const btnStyle={
-    backgroundColor:"#939393"
+const btnStyle = {
+    backgroundColor: "#939393"
 }
 
-const hoveredBtnStyle={
-    backgroundColor:"#d9d9d9"
+const hoveredBtnStyle = {
+    backgroundColor: "#d9d9d9"
 }
 
-const caseDesign1 ={
-    margin: "5px",
-    padding: "5px",
-    textAlign: "center",
-    border: "1.5px solid #000",
-    borderRadius: "5px",
+const selectedBtnStyle = {
+    color: "red"
+}
+
+const caseDesign1 = {
+    margin: "5px 5px 0px 5px",
+    padding: "5px 5px 0px 10px",
+    textAlign: "left",
+    //border: "1.5px solid #000",
+    //borderRadius: "5px",
 };
 
-const caseDesign2 ={
+const caseDesign2 = {
     display: "block",
     margin: "5px",
-    padding: "10px 5px 0px 5px",
-    color: "black",
-    textAlign: "center",
+    padding: "10px 5px 0px 20px",
+    textAlign: "left",
+    //border: "1.5px solid #000",
+    //borderRadius: "5px",
 };
 
-function RadioElement(props) {
-    const [isEnter,setIsEnter]=useState(false);
+const ButtonTitle = [
+    {
+        button:"button-1",
+        title:"日程調節"
+    },
+    {
+        button:"button-2",
+        title:"お礼"
+    },
+    {
+        button:"button-3",
+        title:"応募"
+    },
+    {
+        button:"button-4",
+        title:"辞退"
+    },
+    {
+        button:"button-5",
+        title:"承諾"
+    },
+    {
+        button:"button-6",
+        title:"謝罪"
+    },
+]
 
-    function handleOnEnter(){
+
+function RadioElement(props) {
+    const [isEnter, setIsEnter] = useState(false);
+    // const [isSelected, setIsSelected] = useState(false);
+
+    function handleOnEnter() {
         setIsEnter(true);
     }
 
-    function handleOnLeave(){
+    function handleOnLeave() {
         setIsEnter(false);
     }
 
-    return(
-        <div style = {isEnter?btnStyle:hoveredBtnStyle} onMouseEnter={handleOnEnter} onMouseLeave={handleOnLeave}>
-            <input type="radio" id={props.button} value={props.title} style={{display : "none"}}/>
-            <label for ={props.button} style={caseDesign2}>{props.title}</label>
+    function handleClick() {
+        props.setter(props.title)
+        // setIsSelected(false);
+    }
+
+    function handleCahnge(e) {
+        console.log(e.target.id)
+        props.setSelectedIndex(props.button)
+    }
+
+    return (
+        // <div style={(isEnter ? btnStyle : hoveredBtnStyle)&&(props.selectedIndex === props.button ? selectedBtnStyle : btnStyle)} onMouseEnter={handleOnEnter} onMouseLeave={handleOnLeave} onClick={handleClick}>
+        <div style={{
+            backgroundColor: isEnter? "#939393" : "#d9d9d9",
+            color: props.selectedIndex === props.button ?  "red" : "#000000"
+        }} onMouseEnter={handleOnEnter} onMouseLeave={handleOnLeave} onClick={handleClick}>
+        
+            <input type="radio" id={props.button} value={props.title} 
+            style={{ display: "none" }} name="work"
+            onChange={handleCahnge}/>
+            <label for={props.button} style={caseDesign2}>{props.title}</label>
         </div>
     )
 }
 
+function SideBar({menuStatusSetter}) {
+    const [selectedIndex,setSelectedIndex]=useState("button-1");
+    useEffect(()=>{
+        console.log(selectedIndex)
+    }, [selectedIndex])
+    return (
 
-
-export default function SideBar2(){
-    return(
-        <main style={{width: "100vw",height:"100vh"}}>
-            <div style={{width: '15%', height: '100%', display:'flex', alignItems:'flex-end'}}>
-                <div style = {{width: '100%', height: '90%', backgroundColor: '#D9D9D9'}}>
-                    <details>
+        <div style={{ width: '15%', height: '100%', display: 'flex', alignItems: 'flex-end' }}>
+            <div style={{ width: '100%', height: '90%', backgroundColor: '#D9D9D9' }}>
+                <details>
                     <summary type="radio" class="syukatsu" style={caseDesign1}>就活</summary>
-
-                    <RadioElement
-                    title = "日時調節"
-                    button = "button-1"
-                    />
-
-                    <RadioElement
-                    title = "お礼"
-                    button = "button-2"
-                    />
-                    
-                    <RadioElement
-                    title = "応募"
-                    button = "button-3"
-                    />
-                    
-                    <RadioElement
-                    title = "辞退"
-                    button = "button-4"
-                    />
-                    
-                    <RadioElement
-                    title = "受託"
-                    button = "button-5"
-                    />
-
-                    <RadioElement
-                    title = "謝罪"
-                    button = "button-6"
-                    />
-
-                    </details>
-                </div>
+                    <fieldset style={{border :"none"}}>
+                    {ButtonTitle.map((value,index)=>{
+                        return(
+                            <RadioElement
+                                selectedIndex = {selectedIndex}
+                                setSelectedIndex = {setSelectedIndex}
+                                title={value.title}
+                                button={value.button}
+                                setter={menuStatusSetter}
+                            />
+                        )
+                    })}
+                    </fieldset>
+                </details>
             </div>
-        </main>
+        </div>
+
     )
 }
+
+export default SideBar;

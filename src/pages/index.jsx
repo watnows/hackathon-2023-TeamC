@@ -1,5 +1,5 @@
 import Home from "./home"
-import SideBar from "../components/side"
+import SideBar2 from "../components/side2"
 
 export default function App() {
     return (

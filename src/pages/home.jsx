@@ -11,7 +11,7 @@ import Thanks from "@/components/thanks"
 import Application from "@/components/application"
 import {useState} from "react";
 
-import SideBarDesign from "../components/side"
+import SideBarDesign from "../components/side2"
 
 export default function Home() {
     const [paneState, setPaneState] = useState('日程調節');
