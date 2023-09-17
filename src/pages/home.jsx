@@ -10,9 +10,12 @@ import Refusal from "../components/refusal"
 import Accept from "@/components/accept"
 import Thanks from "@/components/thanks"
 import Application from "@/components/application"
+import {useState} from "react";
 
 
 export default function Home() {
+    const [paneState, setPaneState] = useState('日程調節');
+
     return (
         <div style={{width: '100vw', height: '100vh', display: 'flex', alignItems: 'stretch'}}>
             <SideBar/>
