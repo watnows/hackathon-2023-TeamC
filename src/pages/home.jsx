@@ -12,6 +12,7 @@ import {useEffect, useState} from "react";
 
 export default function Home() {
     const [paneState, setPaneState] = useState('日程調節');
+    const [companyName, setCompanyName] = useState('');
 
     return (
         <div style={{width: '100vw', height: '100vh', display: 'flex', alignItems: 'stretch'}}>
@@ -24,7 +25,8 @@ export default function Home() {
                 {(function () {
                     switch (paneState) {
                         case '日程調節':
-                            return <AdjustSchedulePane/>;
+                            return <AdjustSchedulePane
+                            companyName={companyName} setCompanyName={setCompanyName} />;
                         case '謝罪':
                             return <ApologyPane/>;
                         case '辞退':
@@ -34,17 +36,19 @@ export default function Home() {
                     }
                 })()}
 
-                <Create/>
+                <Create
+                companyName={companyName} />
             </div>
             <Square/>
         </div>
     )
 }
 
-function AdjustSchedulePane() {
+function AdjustSchedulePane(props) {
     return (
         <div>
-            <Frame/>
+            <Frame
+            companyName={props.companyName} setCompanyName={props.setCompanyName}/>
             <YourNameInput/>
             <Date/>
         </div>
