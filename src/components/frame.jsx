@@ -1,5 +1,4 @@
 export default function Frame(props) {
-
     const updateCompanyName = (e) => {
         props.setCompanyName(e.target.value)
     }
