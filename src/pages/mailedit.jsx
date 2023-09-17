@@ -1,4 +1,25 @@
 import React, { useState } from "react";
+import { styled } from "styled-components";
+
+const StyledTextArea=styled.textarea`
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none; 
+    background: #D9D9D9; 
+    outline: none;
+    &::-webkit-scrollbar {
+        background-color: lightgray;
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow:0 0 5px gray inset ;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #7D7D7D;
+        border-radius: 5px;
+    }
+`
 
 export default function Mailedit() {
     const [text, setText] = useState("mail");
@@ -31,6 +52,8 @@ export default function Mailedit() {
         }
     }
 
+  
+
     return (
         <div style={{ width: '100%', height: "100vh" }}>
             <div style={{ background: '#8cd790' }}>
@@ -38,7 +61,7 @@ export default function Mailedit() {
             </div>
             <img src="/logo_undo.svg" style={{ height: 50 }}></img>
             <div style={{width: '70%', margin: 'auto', marginTop: 35, height: '60%', position: 'relative' }} className="scroll-mail"><div style={{ width: '95%', height: '100%', float: 'left' }}>
-                <textarea disabled={judge} style={{ width: '100%', height: '100%', border: 'none', resize: 'none', background: 'lightgray', outline: 'none'}} onChange={onHandleSetText}>{text}</textarea></div>
+                <StyledTextArea disabled={judge} onChange={onHandleSetText}>{text}</StyledTextArea></div>
                 <img src="/logo_copy.svg" style={{ width: '5%', position: 'absolute', bottom: 0, right: 0}} onClick={copyText}></img>
             </div>
             <div style={{ float: "left", marginTop: 60, width: '100%', textAlign: 'center' }}>
