@@ -1,20 +1,22 @@
 import React, { useState } from "react"
 
-export default function Apology() {
+export default function Apology(props) {
     const [data, setData] = useState('');
     const handle = (event) => {
-        setData(event.target.value);
+        props.setter(event.target.value);
+        setData(event.target.value)
         console.log(event.target.value)
     };
 
     return (
         <div style={{ width: '100%' }}>
-            <div style={{ width: '70%', marginLeft: '15%', marginTop: '10%' }}>
+            <div style={{ width: '70%', marginLeft: '15%', marginTop: '2%' }}>
                 <p style={{ fontSize: 20 }}>謝罪理由(選択)</p>
                 <select value={data} onChange={handle}>
                     <option>-選択してください-</option>
                     <option>欠席</option>
                     <option>遅刻</option>
+                    <option>提出遅れ</option>
                     <option>その他</option>
                 </select>
             </div>

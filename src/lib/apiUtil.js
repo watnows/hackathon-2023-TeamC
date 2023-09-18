@@ -69,13 +69,13 @@ async function makeMsgToAskToReceiveOffer(company, contact_person_name, name, be
 }
 
 // 5. お礼
-async function makeMsgToThank(company, contact_person_name, name, belonging, situation) {
+async function makeMsgToThank(company, contact_person_name, name, belonging, reason) {
 
     const data = {
         company: company,
         contact_person_name: contact_person_name,
         name: name,
-        situation: situation,
+        reason: reason,
         belonging: belonging
     }
 

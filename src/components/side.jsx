@@ -39,7 +39,7 @@ export default function SideBarDesign({menuStatusSetter}) {
                         handleRadioChange("応募")
                     }}>
                         <input type="radio" name="work" id="bottun-3" value="応募"/>
-                        <label for="bottun-3">応募</label>
+                        <label htmlFor="bottun-3">応募</label>
                     </div>
                     <div style={RadioDesign}>
                         <input type="radio" name="work" id="bottun-4" value="辞退" onClick={() => {
