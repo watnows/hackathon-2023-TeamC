@@ -1,6 +1,6 @@
 const Loading = () => {
     return (
-        <div style={{width: "100vw", height: "100vh", backgroundColor: "rgba(0,0,0,0.8)", position: "absolute", top: 0, left:0, zIndex: 1000}}>
+        <div style={{width: "100vw", height: "100vh", backgroundColor: "rgba(0,0,0,0.8)", position: "fixed", top: 0, left:0, zIndex: 1000}}>
             <div className={"circle-motion"} style={{width: "100%",height: "100%",display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <div className="illu">
                     <div className="bug"></div>
@@ -17,7 +17,7 @@ const Loading = () => {
                     </div>
                 </div>
             </div>
-            <div style={{color: "white", position: "absolute", top: "70%", left:"45%", fontSize: "1.5rem"}}>Loading...</div>
+            <div style={{color: "white", position: "fixed", top: "70%", left:"45%", fontSize: "1.5rem"}}>Loading...</div>
         </div>
     )
 }

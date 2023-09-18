@@ -4,6 +4,7 @@ export default function Thanks(props) {
 
     const [data, setData] = useState('');
     const handle = (event) => {
+        setData(event.target.value)
         props.setter(event.target.value)
     };
 
