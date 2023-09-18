@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 
-export default function Apology() {
+export default function Apology(props) {
     const [data, setData] = useState('');
     const handle = (event) => {
-        setData(event.target.value);
+        props.setter(event.target.value);
+        setData(event.target.value)
         console.log(event.target.value)
     };
 
@@ -15,6 +16,7 @@ export default function Apology() {
                     <option>-選択してください-</option>
                     <option>欠席</option>
                     <option>遅刻</option>
+                    <option>提出遅れ</option>
                     <option>その他</option>
                 </select>
             </div>

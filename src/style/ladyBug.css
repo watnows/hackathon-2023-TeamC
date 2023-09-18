@@ -1,0 +1,128 @@
+.illu{
+    width:10vw;
+    height:12vw;
+    position: absolute;
+    transform:rotate(225deg);
+    animation: bug ease-in 25s infinite;
+    @keyframes bug {
+        from{
+            bottom:10vh;
+            left:10vw;
+        }
+        to{
+            bottom:110vh;
+            left:110vw;
+        }
+    }
+}
+.bug{
+    position: absolute;
+    width: 10vw;
+    height: 12vw;
+    background-color: #000;
+    border-radius:40%;
+    /*&:after{
+      content:"";
+      display: block;
+      position: absolute;
+      top:0;
+      left:0%;
+      width:50%;
+      height:8vw;
+      background-color: red;
+      border-radius: 20% / 100%;
+      border-top-left-radius:60px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      transform-origin:right bottom;
+      animation:wingLeft 1s infinite alternate;
+      @keyframes wingLeft{
+        from{
+          transform:rotate(0deg);
+        }
+        to{
+          transform:rotate(-15deg);
+        }
+      }
+    }*/
+}
+
+.wing{
+    display: block;
+    position: absolute;
+    top:0;
+    width:50%;
+    height:8vw;
+    background-color: red;
+    border-radius: 20% / 100%;
+    &.wing--1{
+        right:0%;
+        border-top-right-radius:60px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        transform-origin:left bottom;
+        animation:wingRight 1s infinite alternate;
+        @keyframes wingRight{
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(15deg);
+            }
+        }
+    }
+    &.wing--2{
+        left:0%;
+        border-top-left-radius:60px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        transform-origin:right bottom;
+        animation:wingLeft 1s infinite alternate;
+        @keyframes wingLeft{
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(-15deg);
+            }
+        }
+    }
+}
+
+
+
+.point{
+    position: absolute;
+    width:1.5vw;
+    height:1.5vw;
+    background-color: #000;
+    border-radius:50%;
+    &.point--1{
+        top:70%;
+        left:20%;
+    }
+    &.point--2{
+        top:40%;
+        left:50%;
+    }
+    &.point--3{
+        top:15%;
+        left:10%;
+    }
+    &.point--4{
+        top:70%;
+        right:60%;
+    }
+    &.point--5{
+        top:30%;
+        right:50%;
+    }
+    &.point--6{
+        top:55%;
+        right:20%;
+    }
+    &.point--7{
+        top:15%;
+        right:20%;
+    }
+}

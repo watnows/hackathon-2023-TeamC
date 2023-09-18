@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 
-export default function Refusal() {
+export default function Refusal(props) {
     const [data, setData] = useState('');
     const handle = (event) => {
         setData(event.target.value);
+        props.setter(event.target.value)
         console.log(event.target.value)
     };
 
