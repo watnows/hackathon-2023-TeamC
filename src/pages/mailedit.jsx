@@ -92,7 +92,7 @@ export default function Mailedit() {
         <>
             {router.isReady ?
                 <div style={{width: '100%', height: "100vh"}}>
-                    <div style={{background: '#8cd790'}}>
+                    <div style={{background: '#8cd790',border: 'dashed 5px #2e8b57' }}>
                         <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"></link>
                         <div style={{ color: 'white', fontSize: 45, textAlign: 'center', letterSpacing: 8, fontFamily: 'Nico Moji', marginTop: 5 }}>シューカツメールつくるくん</div>
 
