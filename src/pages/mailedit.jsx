@@ -93,14 +93,9 @@ export default function Mailedit() {
             {router.isReady ?
                 <div style={{width: '100%', height: "100vh"}}>
                     <div style={{background: '#8cd790'}}>
-                        <div style={{
-                            color: 'white',
-                            fontSize: 38,
-                            fontWeight: "lighter",
-                            letterSpacing: 5,
-                            textAlign: 'center'
-                        }}>就活メールつくるくん
-                        </div>
+                        <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"></link>
+                        <div style={{ color: 'white', fontSize: 45, textAlign: 'center', letterSpacing: 8, fontFamily: 'Nico Moji', marginTop: 5 }}>シューカツメールつくるくん</div>
+
                     </div>
                     <img onClick={backClick} src="/logo_undo.svg" style={{height: 50}}></img>
                     <div style={{width: '70%', margin: 'auto', marginTop: 35, height: '60%', position: 'relative'}}
