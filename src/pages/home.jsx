@@ -11,7 +11,7 @@ import Thanks from "@/components/thanks"
 import Application from "@/components/application"
 import {useState} from "react";
 
-import SideBarDesign from "../components/side"
+import SideBarDesign from "../components/side2"
 import AdjustSchedulePane from "@/components/answerPane/AdjustSchedulePane";
 import ThanksPane from "@/components/answerPane/ThanksPane";
 import ApologyPane from "@/components/answerPane/ApologyPane";
@@ -41,8 +41,6 @@ export default function Home() {
                             return <ThanksPane/>
                         case '承諾':
                             return <AcceptPane/>
-                        case '応募':
-                            return <ApplicationPane/>
                         default:
                             return <div>Default Condition</div>;
                     }

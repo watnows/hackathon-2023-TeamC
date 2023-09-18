@@ -10,7 +10,7 @@ export default function Apology(props) {
 
     return (
         <div style={{ width: '100%' }}>
-            <div style={{ width: '70%', marginLeft: '15%', marginTop: '10%' }}>
+            <div style={{ width: '70%', marginLeft: '15%', marginTop: '2%' }}>
                 <p style={{ fontSize: 20 }}>謝罪理由(選択)</p>
                 <select value={data} onChange={handle}>
                     <option>-選択してください-</option>

@@ -27,6 +27,11 @@ export default function ThanksPane() {
     const [isLoading, setIsLoading] = useState(false);
 
     async function submit() {
+        if (companyName === "" || contactPersonName === "" || name === "" || belonging === "" || reason === "") {
+            alert("全ての項目を入力してください");
+            return;
+        }
+
         setIsLoading(true);
         const result = await makeMsgToThank(
             companyName,

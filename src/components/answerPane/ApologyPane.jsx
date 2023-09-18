@@ -30,6 +30,11 @@ const ApologyPane = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     async function submit() {
+        if (companyName === "" || belonging === "" || contactPersonName === "" || name === "" || what === "" || situation === "") {
+            alert("全ての項目を入力してください");
+            return;
+        }
+
         setIsLoading(true);
         const result = await makeMsgToApology(
             companyName,

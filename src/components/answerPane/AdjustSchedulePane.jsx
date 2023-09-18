@@ -34,6 +34,11 @@ export default function AdjustSchedulePane() {
     const [isLoading, setIsLoading] = useState(false);
 
     async function submit() {
+        if(companyName === "" || contactPersonName === "" || name === "" || belonging === "" || reason === "" || newDatesArray.length === 0 || pastDate.start_date === 0 || pastDate.end_date === 0){
+            alert("全ての項目を入力してください");
+            return;
+        }
+
         setIsLoading(true);
         const result = await makeMsgToAdjustSchedule(
             newDatesArray,

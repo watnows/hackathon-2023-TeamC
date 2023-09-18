@@ -28,6 +28,11 @@ const RefusalPane = (props) => {
     const [isLoading, setIsLoading] = useState(false);
 
     async function submit() {
+        if (companyName === "" || contactPersonName === "" || name === "" || belonging === "" || reason === "") {
+            alert("全ての項目を入力してください");
+            return;
+        }
+
         setIsLoading(true);
         const result = await makeMsgToAskToRefuse(
             companyName,
@@ -40,7 +45,6 @@ const RefusalPane = (props) => {
         await Router.push("/mailedit?title=" + encodeURIComponent(result.title) + "&content=" + encodeURIComponent(result.content));
 
         setIsLoading(false);
-
     }
 
 
