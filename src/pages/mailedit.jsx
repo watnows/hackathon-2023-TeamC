@@ -30,7 +30,7 @@ export default function Mailedit() {
 
     const copyText = async () => {
         await global.navigator.clipboard.writeText(maintext)
-        
+
         if(buttoncolor == "#D9D9D9") {
             setColor("#77af9c")
         }
@@ -84,8 +84,8 @@ export default function Mailedit() {
                 <img src="/logo_copy.svg" style={{ width: '5%', position: 'absolute', bottom: 0, right: 0}} onClick={copyText}></img>
             </div>
             <div style={{ float: "left", marginTop: 60, width: '100%', textAlign: 'center' }}>
-                <button style={{ border: 'none', letterSpacing: 3, paddingLeft: 50, paddingRight: 50, paddingTop: 15, paddingBottom: 15, fontSize: 20, borderRadius: 10, background: buttoncolor, color: 'white', marginRight: 200, fontWeight: 'bold', border: 'solid 3px #2e8b57' }} onClick={pushEdit}>編集</button>
-                <button style={{ border: 'none', letterSpacing: 3, paddingLeft: 50, paddingRight: 50, paddingTop: 15, paddingBottom: 15, fontSize: 20, borderRadius: 10, background: "#77af9c", color: 'white', marginLeft: 200, fontWeight: 'bold', border: 'solid 3px #2e8b57' }} onClick={sendClick}>送信</button>
+                <button style={{ letterSpacing: 3, paddingLeft: 50, paddingRight: 50, paddingTop: 15, paddingBottom: 15, fontSize: 20, borderRadius: 10, background: buttoncolor, color: 'white', marginRight: 200, fontWeight: 'bold', border: 'solid 3px #2e8b57' }} onClick={pushEdit}>編集</button>
+                <button style={{ letterSpacing: 3, paddingLeft: 50, paddingRight: 50, paddingTop: 15, paddingBottom: 15, fontSize: 20, borderRadius: 10, background: "#77af9c", color: 'white', marginLeft: 200, fontWeight: 'bold', border: 'solid 3px #2e8b57' }} onClick={sendClick}>送信</button>
             </div>
         </div>
     )
