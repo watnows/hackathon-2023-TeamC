@@ -47,74 +47,8 @@ export default function Home() {
                             return <div>Default Condition</div>;
                     }
                 })()}
-
-                {/*<CreateBtn*/}
-                {/*companyName={companyName} majorName={majorName} name={name} dateandtime={dateandtime} />*/}
             </div>
             <Square/>
-        </div>
-    )
-}
-
-/*
-function AdjustSchedulePane(props) {
-    return (
-        <div>
-            <BasicInput
-            setCompanyName={props.setCompanyName}/>
-            <YourNameInput  
-            setCompanyName={props.setMajorName} setMajorName={props.setMajorName} setName={props.setName} />
-            <StartDatePicker setDateandtime={props.setDateandtime} dateandtime={props.dateandtime} />
-        </div>
-    )
-}
-*/
-
-/*
-function ApologyPane() {
-    return (
-        <div>
-            <BasicInput/>
-            <YourNameInput/>
-            <Apology/>
-        </div>
-    )
-}
-
-
-function RefusalPane() {
-    return (
-        <div>
-            <BasicInput/>
-            <YourNameInput/>
-            <Refusal/>
-        </div>
-    )
-}
-
-
-function ThanksPane() {
-    return (
-        <div className="お礼">
-            <Thanks/>
-        </div>
-    )
-}
-
-function AcceptPane() {
-    return (
-        <div className="承諾">
-            <Accept/>
-        </div>
-    )
-}
-*/
-
-
-function ApplicationPane() {
-    return (
-        <div className="応募">
-            <Application/>
         </div>
     )
 }

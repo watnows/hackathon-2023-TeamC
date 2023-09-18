@@ -19,7 +19,7 @@ export default function SideBarDesign({menuStatusSetter}) {
 
     return (
         <div style={{width: '15%', height: '100%', display: 'flex', alignItems: 'flex-end'}}>
-            <div style={{width: '100%', height: '90%', backgroundColor: '#D9D9D9'}}>
+            <div style={{width: '100%', height: '90%', backgroundColor: '#D9D9D9', border: 'dashed 5px #696969'}}>
                 <details>
                     <summary style={CaseDesign} className="syukatsu">就活</summary>
 
