@@ -30,6 +30,7 @@ export default function Mailedit() {
     const [text, setText] = useState("mail");
     const [judge, setJudge] = useState(true);
     const [buttoncolor, setColor] = useState("#C5E99B");
+    const router = useRouter();
 
     useEffect(() => {
         if (router.isReady) {
