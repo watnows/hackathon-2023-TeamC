@@ -33,7 +33,7 @@ export default function Mailedit() {
     const [content, setContent] = useState("");
 
     const [judge, setJudge] = useState(true);
-    const [buttoncolor, setColor] = useState("#C5E99B");
+    const [buttoncolor, setColor] = useState("#8CD790");
 
     useEffect(() => {
         if (router.isReady) {
@@ -54,7 +54,7 @@ export default function Mailedit() {
         await global.navigator.clipboard.writeText(content)
 
         if (buttoncolor == "#D9D9D9") {
-            setColor("#C5E99B")
+            setColor("#8CD790")
         }
         if (judge == false) {
             setJudge(true)
@@ -73,10 +73,10 @@ export default function Mailedit() {
 
     const pushEdit = () => {
         setJudge(!judge)
-        if (buttoncolor == "#C5E99B") {
+        if (buttoncolor == "#8CD790") {
             setColor("#D9D9D9")
         } else {
-            setColor("#C5E99B")
+            setColor("#8CD790")
         }
     }
 
@@ -91,27 +91,29 @@ export default function Mailedit() {
     return (
         <>
             {router.isReady ?
-                <div style={{width: '100%', height: "100vh"}}>
-                    <div style={{background: '#8cd790',border: 'dashed 5px #2e8b57' }}>
+                <div style={{width: '100%', height: "100vh", backgroundColor: "#EAF9D8"}}>
+                    <div style={{background: '#8cd790',border: 'dashed 4px #77AF9C' }}>
                         <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"></link>
                         <div style={{ color: 'white', fontSize: 45, textAlign: 'center', letterSpacing: 8, fontFamily: 'Nico Moji', marginTop: 5 }}>シューカツメールつくるくん</div>
 
                     </div>
-                    <img onClick={backClick} src="/logo_undo.svg" style={{height: 50}}></img>
-                    <div style={{width: '70%', margin: 'auto', marginTop: 35, height: '60%', position: 'relative'}}
+                    <img onClick={backClick} src="/logo_undo.svg" style={{height: 55, color: "#757575", marginLeft: 15, marginTop: 10}}></img>
+                    <div style={{width: '60%', margin: 'auto', height: '60%', position: 'relative'}}
                          className="scroll-mail">
-                        <div style={{width: '100%', height: '10%'}}>
-                            <StyledTextArea disabled={judge}
+                        <div style={{width: '100%', height: '13%'}}>
+                            <StyledTextArea style={{backgroundColor: '#FFFFFF', border: "solid 5px #77AF9C", borderRadius: 10}}
+                                            disabled={judge}
                                             onChange={handleTitleChange} value={title}/>
                         </div>
-                        <div style={{width: '100%', height: '80%', marginTop: "5%"}}>
-                            <StyledTextArea disabled={judge}
+                        <div style={{width: '100%', height: '85%', marginTop: "2%"}}>
+                            <StyledTextArea style={{backgroundColor: '#FFFFFF', border: "solid 5px #77AF9C", borderRadius: 10}}
+                                            disabled={judge}
                                             onChange={handleContentChange} value={content}/>
                         </div>
                         <img src="/logo_copy.svg" style={{width: '5%', position: 'absolute', bottom: 0, right: 0}}
                              onClick={copyText}></img>
                     </div>
-                    <div style={{float: "left", marginTop: 60, width: '100%', textAlign: 'center'}}>
+                    <div style={{float: "left", marginTop: 50, width: '100%', textAlign: 'center'}}>
                         <button style={{
                             border: 'none',
                             letterSpacing: 3,
@@ -120,11 +122,12 @@ export default function Mailedit() {
                             paddingTop: 15,
                             paddingBottom: 15,
                             fontSize: 20,
-                            borderRadius: 10,
+                            borderRadius: 15,
                             background: buttoncolor,
                             color: 'white',
                             marginRight: 200,
-                            fontWeight: 'bold'
+                            fontWeight: 'bold',
+                            boxShadow: '0px 6px 7px -3px gray'
                         }} onClick={pushEdit}>編集
                         </button>
                         <button style={{
@@ -135,11 +138,12 @@ export default function Mailedit() {
                             paddingTop: 15,
                             paddingBottom: 15,
                             fontSize: 20,
-                            borderRadius: 10,
-                            background: "#C5E99B",
+                            borderRadius: 15,
+                            background: "#8CD790",
                             color: 'white',
                             marginLeft: 200,
-                            fontWeight: 'bold'
+                            fontWeight: 'bold',
+                            boxShadow: '0px 6px 7px -3px gray'
                         }} onClick={handleSend}>送信
                         </button>
                     </div>
