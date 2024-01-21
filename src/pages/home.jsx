@@ -22,7 +22,7 @@ export default function Home() {
     const [paneState, setPaneState] = useState('日程調節');
 
     return (
-        <div style={{width: '100%', height: '100vh', display: 'flex', alignItems: 'stretch'}}>
+        <div style={{width: '100%', height: '100vh', display: 'flex', alignItems: 'stretch', background: '#EAF9D8'}}>
             <SideBarDesign menuStatusSetter={setPaneState}/>
 
             <div style={{width: '85%'}}>
@@ -31,7 +31,7 @@ export default function Home() {
 
                 {(function () {
                     switch (paneState) {
-                        case '日程調節!':
+                        case '日程調節':
                             return <AdjustSchedulePane/>
                         case '謝罪':
                             return <ApologyPane/>;

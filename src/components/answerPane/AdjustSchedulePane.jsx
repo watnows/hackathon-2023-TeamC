@@ -68,10 +68,10 @@ export default function AdjustSchedulePane() {
                 <YourNameInput setter={setName} widthRatio={40}/>
             </div>
             <div style={{display: "flex", width: "100%", padding: "2vh 0", justifyContent: "center"}}>
-                <div style={{width: "80%"}}>
+                <div style={{width: "80%", paddingLeft: '1vh'}}>
                     <p style={{fontSize: 20}}>理由</p>
                     <textarea onChange={(e) => setReason(e.target.value)} placeholder="理由を入力してください"
-                              style={{width: "100%", height: "10vh"}}/>
+                              style={{width: "100%", height: "10vh", border: "solid 3px #c5e998", borderRadius: "10px"}}/>
                 </div>
             </div>
             <div style={{display: "flex", justifyContent: "center", padding: "2vh",}}>
