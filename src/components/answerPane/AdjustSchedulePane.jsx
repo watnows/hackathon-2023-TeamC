@@ -74,21 +74,20 @@ export default function AdjustSchedulePane() {
                               style={{width: "100%", height: "10vh"}}/>
                 </div>
             </div>
-            <div style={{display: "flex", justifyContent: "center", padding: "2vh",}}>
-                <PastDatePicker setter={setPastDate}/>
+            <div style={{display: 'flex'}}>
+                <div style={{display: "flex", justifyContent: "center", padding: "2vh",}}>
+                    <PastDatePicker setter={setPastDate}/>
+                </div>
+                <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                    <StartDatePicker setter={setNewDatesArray}/>
+                    <StartDatePresenter newDatesArray={newDatesArray}/>
+                </div>
             </div>
-            <div style={{
-                display: "flex",
-                padding: "2vh",
-                flexDirection: "column",
-                width: "100%",
-                justifyContent: "center",
-                alignItems: "center"
-            }}>
-                <StartDatePicker setter={setNewDatesArray}/>
-                <StartDatePresenter newDatesArray={newDatesArray}/>
-            </div>
-
             <CreateBtn onClick={submit}/>
         </div>
     )
