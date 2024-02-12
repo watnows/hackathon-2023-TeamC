@@ -31,7 +31,7 @@ export default function Home() {
 
                 {(function () {
                     switch (paneState) {
-                        case '日程調節!':
+                        case '日程調節':
                             return <AdjustSchedulePane/>
                         case '謝罪':
                             return <ApologyPane/>;
