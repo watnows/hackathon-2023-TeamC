@@ -45,8 +45,9 @@ export default function StartDatePicker(props) {
                     <input style={{margin:5, marginBottom:10, borderRadius: 10, border: 'none'}} value={inputEndDate} onChange={handleOnEndDateInput} type="datetime-local"/>
                 </div>
             </div>
-            <div style={{position: 'relative'}}>
-                <button style={{width: '4rem', height: '2rem', marginLeft: '1rem', marginTop: '2rem', border: 'none', backgroundColor: '#8CD790', borderRadius: 25, color: 'white', position: 'absolute', bottom: 0}}
+            <div style={{position: "relative"}}>
+
+                <button style={{width: '4rem', height: '2rem', marginLeft: '1rem', marginTop: '2rem', border: 'none', backgroundColor: '#8CD790', borderRadius: 25, color: 'white', boxShadow: "0 2px 4px rgba(0,0,0,0.3)", position: 'absolute', bottom: 0}}
                         onClick={handleClickedBtn}>追加
                 </button>
             </div>
