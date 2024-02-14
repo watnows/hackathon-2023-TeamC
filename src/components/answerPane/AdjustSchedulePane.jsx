@@ -68,27 +68,26 @@ export default function AdjustSchedulePane() {
                 <YourNameInput setter={setName} widthRatio={40}/>
             </div>
             <div style={{display: "flex", width: "100%", padding: "2vh 0", justifyContent: "center"}}>
-                <div style={{width: "80%"}}>
+                <div style={{width: "80%", paddingLeft: '1vh'}}>
                     <p style={{fontSize: 20}}>理由</p>
                     <textarea onChange={(e) => setReason(e.target.value)} placeholder="理由を入力してください"
-                              style={{width: "100%", height: "10vh"}}/>
+                              style={{width: "100%", height: "10vh", border: "solid 3px #c5e998", borderRadius: "10px"}}/>
                 </div>
             </div>
-            <div style={{display: "flex", justifyContent: "center", padding: "2vh",}}>
-                <PastDatePicker setter={setPastDate}/>
+            <div style={{display: 'flex'}}>
+                <div style={{display: "flex", justifyContent: "center", padding: "2vh",}}>
+                    <PastDatePicker setter={setPastDate}/>
+                </div>
+                <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                    <StartDatePicker setter={setNewDatesArray}/>
+                    <StartDatePresenter newDatesArray={newDatesArray}/>
+                </div>
             </div>
-            <div style={{
-                display: "flex",
-                padding: "2vh",
-                flexDirection: "column",
-                width: "100%",
-                justifyContent: "center",
-                alignItems: "center"
-            }}>
-                <StartDatePicker setter={setNewDatesArray}/>
-                <StartDatePresenter newDatesArray={newDatesArray}/>
-            </div>
-
             <CreateBtn onClick={submit}/>
         </div>
     )
