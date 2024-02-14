@@ -13,7 +13,7 @@ const caseDesign2 = {
   padding: "10px 5px 0px 5px",
   color: "black",
   textAlign: "center",
-  borderBottom: "1.5px solid #000",
+  borderBottom: "1.5px solid #757575",
 };
 
 export default function SideBar3() {

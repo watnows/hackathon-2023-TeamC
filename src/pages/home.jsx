@@ -11,7 +11,7 @@ import Thanks from "@/components/thanks"
 import Application from "@/components/application"
 import {useState} from "react";
 
-import SideBarDesign from "../components/side2"
+import SideBarDesign from "../components/side4"
 import AdjustSchedulePane from "@/components/answerPane/AdjustSchedulePane";
 import ThanksPane from "@/components/answerPane/ThanksPane";
 import ApologyPane from "@/components/answerPane/ApologyPane";
