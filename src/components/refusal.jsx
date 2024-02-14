@@ -11,7 +11,7 @@ export default function Refusal(props) {
     return (
         <div style={{display: 'flex', marginLeft: '10%'}}>
             <div style={{ width: '30%', padding: '2vh 2vh 2vh 1vh'}}>
-                <p style={{ fontSize: 20 }}>辞退理由</p>
+                <p style={{ fontSize: 20, color:'#757575'}}>辞退理由</p>
                 <select value={data} onChange={handle} style={{border: "solid 3px #c5e998", borderRadius: "5px"}}>
                     <option>-選択してください-</option>
                     <option>より志望度が高い他社から内定をもらった</option>
@@ -24,7 +24,7 @@ export default function Refusal(props) {
             </div>
             {(data === 'その他') && (
                 <div style={{ width: '60%', padding: '2vh'}}>
-                    <p style={{ fontSize: 20 }}>辞退理由(記述)</p>
+                    <p style={{ fontSize: 20, color:'#757575'}}>辞退理由(記述)</p>
                     <div><input placeholder="例：希望の勤務地ではなかったため" style={{ width: '100%', height: '10%', padding: 20, fontSize: 16, border: "solid 3px #c5e998", borderRadius: "10px" }}></input></div>
                 </div>
             )}

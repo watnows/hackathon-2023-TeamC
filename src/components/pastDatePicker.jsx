@@ -1,6 +1,7 @@
 const pastDatePicker = (props) => {
     return (
-        <div>
+        <div style={{width: '100%'}}>
+        <div style={{}}>
             <p style={{fontSize:20, color:'#757575'}}>過去の日程</p>
             <div style={{display: "flex",flexFlow: 'column', textAlign: 'center', backgroundColor:'#77AF9C', color: 'white', borderRadius: 8, opacity: 0.7}}>
                 <input style={{margin:5, marginTop:10, borderRadius: 10, border: 'none'}} onChange={(e) => {
@@ -16,6 +17,7 @@ const pastDatePicker = (props) => {
                     props.setter(prev => ({start_date: prev.start_date, end_date: endUnixTime}))
                 }} type={"datetime-local"}/>
             </div>
+        </div>
         </div>
     )
 }
