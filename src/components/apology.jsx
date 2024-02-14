@@ -11,7 +11,7 @@ export default function Apology(props) {
     return (
         <div style={{ width: '100%', display: 'flex', padding: '0 2vh 2vh 1vh' }}>
             <div style={{ width: '15%', marginLeft: '10%'}}>
-                <p style={{ fontSize: 20 }}>謝罪理由(選択)</p>
+                <p style={{ fontSize: 20, color:'#757575'}}>謝罪理由(選択)</p>
                 <select value={data} onChange={handle} style={{border: "solid 3px #8cd790", borderRadius: "10px"}}>
                     <option> -選択してください- </option>
                     <option>欠席</option>
@@ -22,7 +22,7 @@ export default function Apology(props) {
             </div>
             {(data === 'その他') && (
                 <div style={{ width: '65%'}}>
-                    <p style={{ fontSize: 20 }}>謝罪理由(記述)</p>
+                    <p style={{ fontSize: 20, color:'#757575'}}>謝罪理由(記述)</p>
                     <div>
                         <input placeholder="例：電車が遅延していたため" style={{ width: '100%', height: '10%', padding: 20, fontSize: 16, border: "solid 3px #8cd790", borderRadius: "10px"}}></input>
                     </div>

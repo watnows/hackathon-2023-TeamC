@@ -62,7 +62,7 @@ const ApologyPane = () => {
             </div>
             <div style={{display: "flex", width: "100%", justifyContent: "center"}}>
                 <div style={{width: "80%", padding: '2vh 2vh 2vh 1vh' }}>
-                    <p style={{fontSize: 20}}>何について</p>
+                    <p style={{fontSize: 20, color:'#757575'}}>何について</p>
                     <textarea onChange={(e) => setWhat(e.target.value)} placeholder="例：提出物"
                               style={{width: "100%", height: "10vh", border: "solid 3px #c5e998", borderRadius: "10px"}} value={what}/>
                 </div>
