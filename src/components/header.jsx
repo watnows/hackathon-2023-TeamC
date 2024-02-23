@@ -1,4 +1,10 @@
+import React, {useEffect} from "react";
+
 export default function Header() {
+    useEffect(() => {
+        document.title = "シューカツメールつくるくん"
+    }, []);
+    
     return (
         <div style={{ width: '100%', height: '13%', float: 'right', background: '#8CD790', border: 'dashed 5px #2e8b57', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet"></link>
