@@ -30,7 +30,7 @@ const ApologyPane = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     async function submit() {
-        if (companyName === "" || belonging === "" || contactPersonName === "" || name === "" || what === "" || situation === "") {
+        if (companyName === "" || belonging === "" || contactPersonName === "" || name === "" || situation === "") {
             alert("全ての項目を入力してください");
             return;
         }
@@ -59,13 +59,6 @@ const ApologyPane = () => {
             <div style={{display: "flex", width: "100%", padding: "2vh", justifyContent: "center", gap: 20}}>
                 <BelongingInput setter={setBelonging} widthRatio={40}/>
                 <YourNameInput setter={setName} widthRatio={40}/>
-            </div>
-            <div style={{display: "flex", width: "100%", justifyContent: "center"}}>
-                <div style={{width: "80%", padding: '2vh 2vh 2vh 1vh' }}>
-                    <p style={{fontSize: 20, color:'#757575'}}>何について</p>
-                    <textarea onChange={(e) => setWhat(e.target.value)} placeholder="例：提出物"
-                              style={{width: "100%", height: "10vh", border: "solid 3px #c5e998", borderRadius: "10px"}} value={what}/>
-                </div>
             </div>
             <Apology setter={setSituation}/>
             <CreateBtn onClick={submit}/>
