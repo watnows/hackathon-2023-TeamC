@@ -52,11 +52,11 @@ export default function StartDatePicker(props) {
             prevItems.map((p, i) =>
                 i === index
                     ? {
-                        key:index,
+                        key: index,
                         start_date: state === "start" ? UnixTime : p.start_date,
                         end_date: state === "end" ? UnixTime : p.end_date,
                     }
-                    : p
+                    : p,key
             )
         );
     }
