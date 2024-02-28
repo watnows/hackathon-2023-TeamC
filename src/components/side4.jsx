@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const ListTitleDesign: React.CSSProperties = {
+const ListTitleDesign = {
     margin: "5px 5px 0px 5px",
     padding: "5px 5px 0px 10px",
     textAlign: "left",
@@ -8,16 +8,16 @@ const ListTitleDesign: React.CSSProperties = {
     color: "#757575",
 };
 
-const ListContentDesign: React.CSSProperties = {
+const ListContentDesign = {
     textAlign: "left",
     fontSize: "20px",
 };
 
-const buttonStyle: React.CSSProperties = {
+const buttonStyle = {
     border: "none",
 };
 
-const ButtonTitle: ButtonTitle[] = [
+const ButtonTitle = [
     {
         button: "button-1",
         title: "日程調節",
@@ -40,24 +40,7 @@ const ButtonTitle: ButtonTitle[] = [
     },
 ];
 
-interface ButtonTitle {
-    button: string;
-    title: string;
-}
-
-interface RadioElementProps {
-    title: string;
-    button: string;
-    setter: (title: string) => void;
-    selectedIndex: string;
-    setSelectedIndex: (index: string) => void;
-}
-
-interface SideBarProps {
-    menuStatusSetter: (title: string) => void;
-}
-
-function RadioElement(props: RadioElementProps) {
+function RadioElement(props) {
     const [isEnter, setIsEnter] = useState(false);
 
     function handleOnEnter() {
@@ -72,7 +55,7 @@ function RadioElement(props: RadioElementProps) {
         props.setter(props.title);
     }
 
-    function handleCahnge(e: React.ChangeEvent<HTMLInputElement>) {
+    function handleChange(e) {
         console.log(e.target.id);
         props.setSelectedIndex(props.button);
     }
@@ -96,7 +79,7 @@ function RadioElement(props: RadioElementProps) {
                 value={props.title}
                 style={{ display: "none" }}
                 name="work"
-                onChange={handleCahnge}
+                onChange={handleChange}
             />
             <label htmlFor={props.button} style={ListContentDesign}>
                 {props.title}
@@ -105,7 +88,7 @@ function RadioElement(props: RadioElementProps) {
     );
 }
 
-function SideBar({ menuStatusSetter }: SideBarProps) {
+function SideBarDesign({ menuStatusSetter }) {
     const [selectedIndex, setSelectedIndex] = useState("button-1");
 
     useEffect(() => {
@@ -115,26 +98,24 @@ function SideBar({ menuStatusSetter }: SideBarProps) {
     return (
         <div style={{ width: "15%", height: "100%", display: "flex", alignItems: "flex-end" }}>
             <div style={{ width: "100%", height: "87%", backgroundColor: "#8CD790", border: "dashed 5px #696969" }}>
-                
-                    <div style={ListTitleDesign}>
-                        就活
-                    </div>
-                    <fieldset style={buttonStyle}>
-                        {ButtonTitle.map((value, index) => (
-                            <RadioElement
-                                selectedIndex={selectedIndex}
-                                setSelectedIndex={setSelectedIndex}
-                                title={value.title}
-                                button={value.button}
-                                setter={menuStatusSetter}
-                                key={index}
-                            />
-                        ))}
-                    </fieldset>
-                
+                <div style={ListTitleDesign}>
+                    就活
+                </div>
+                <fieldset style={buttonStyle}>
+                    {ButtonTitle.map((value, index) => (
+                        <RadioElement
+                            selectedIndex={selectedIndex}
+                            setSelectedIndex={setSelectedIndex}
+                            title={value.title}
+                            button={value.button}
+                            setter={menuStatusSetter}
+                            key={index}
+                        />
+                    ))}
+                </fieldset>
             </div>
         </div>
     );
 }
 
-export default SideBar;
+export default SideBarDesign;
