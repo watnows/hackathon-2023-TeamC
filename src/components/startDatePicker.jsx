@@ -56,7 +56,7 @@ export default function StartDatePicker(props) {
                         start_date: state === "start" ? UnixTime : p.start_date,
                         end_date: state === "end" ? UnixTime : p.end_date,
                     }
-                    : p,key
+                    : {p, key:index}
             )
         );
     }
