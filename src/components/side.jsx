@@ -23,7 +23,7 @@ export default function SideBarDesign({menuStatusSetter}) {
                 <details>
 
                     <div style={RadioDesign} onClick={() => {
-                        handleRadioChange("日程調節")
+                        handleRadioChange("日程変更")
                     }}>
                         <input type="radio" name="work" id="bottun-1" value="日時調節"/>
                         <label htmlFor="bottun-1">日時調節</label>

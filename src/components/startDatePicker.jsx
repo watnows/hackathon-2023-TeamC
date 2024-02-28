@@ -24,7 +24,7 @@ function StartDateInput(props) {
             <div style={{display: 'flex', paddingRight: '2vh'}}>
                 <div style={{float: 'left'}}>
                 <p style={{fontSize: 20, color:'#757575'}}>
-                新しい日程{props.newDatesArray.length - 1 === props.index && (
+                希望する日程{props.newDatesArray.length - 1 === props.index && (
                 <span>
                     <button onClick={handleOnClickDelete} style={{color: 'red', border: 'none', backgroundColor: 'transparent', borderRadius: '50%', float: 'right', position: 'relative', padding: 0}}>×</button>
                 </span>

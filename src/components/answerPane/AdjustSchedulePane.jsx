@@ -68,7 +68,7 @@ export default function AdjustSchedulePane() {
             <div style={{display: "flex", width: "100%", padding: "2vh 0", justifyContent: "center"}}>
                 <div style={{width: "80%", paddingLeft: '1vh'}}>
                     <p style={{fontSize: 20, color: '#757575'}}>理由</p>
-                    <textarea onChange={(e) => setReason(e.target.value)} placeholder="理由を入力してください"
+                    <textarea onChange={(e) => setReason(e.target.value)} placeholder="例：ゼミの日程と被ってしまったため"
                               style={{width: "100%", height: "10vh", border: "solid 3px #c5e998", borderRadius: "10px"}}/>
                 </div>
             </div>

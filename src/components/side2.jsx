@@ -19,7 +19,7 @@ const caseDesign2 = {
 const ButtonTitle = [
     {
         button:"button-1",
-        title:"日程調節"
+        title:"日程変更"
     },
     {
         button:"button-2",

@@ -11,6 +11,8 @@ const ListTitleDesign = {
 const ListContentDesign = {
     textAlign: "left",
     fontSize: "20px",
+    displayStyle: "block",
+    width: "100%",
 };
 
 const buttonStyle = {
@@ -20,7 +22,7 @@ const buttonStyle = {
 const ButtonTitle = [
     {
         button: "button-1",
-        title: "日程調節",
+        title: "日程変更",
     },
     {
         button: "button-2",
