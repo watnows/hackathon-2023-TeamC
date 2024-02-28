@@ -9,7 +9,7 @@ export default function Apology(props) {
     };
 
     return (
-        <div style={{ width: '100%', display: 'flex', padding: '0 2vh 2vh 1vh' }}>
+        <div style={{ width: '100%', display: 'flex', padding: '2vh' }}>
             <div style={{ width: '15%', marginLeft: '10%'}}>
                 <p style={{ fontSize: 20, color:'#757575'}}>謝罪理由(選択)</p>
                 <select value={data} onChange={handle} style={{border: "solid 3px #8cd790", borderRadius: "10px"}}>
@@ -20,11 +20,19 @@ export default function Apology(props) {
                     <option>その他</option>
                 </select>
             </div>
-            {(data === 'その他') && (
+            {data && data !== '-選択してください-' &&(
                 <div style={{ width: '65%'}}>
                     <p style={{ fontSize: 20, color:'#757575'}}>謝罪理由(記述)</p>
                     <div>
-                        <input placeholder="例：電車が遅延していたため" style={{ width: '100%', height: '10%', padding: 20, fontSize: 16, border: "solid 3px #8cd790", borderRadius: "10px"}}></input>
+                        <input
+                            placeholder={
+                                data === '欠席' ? "例：急用が入ってしまい、面接に行くことができなかった" :
+                                data === '遅刻' ? "例：電車の遅延により、打合せに時間通りに到着できなかった" :
+                                data === '提出遅れ' ? "例：パソコンのトラブルにより、提出物を期限内に提出できなかった" :
+                                ""
+                            }
+                            style={{ width: '100%', height: '10%', padding: 20, fontSize: 16, border: "solid 3px #8cd790", borderRadius: "10px"}}
+                        />
                     </div>
                 </div>
             )}
