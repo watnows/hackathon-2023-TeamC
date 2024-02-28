@@ -6,11 +6,9 @@ import CompanyNameInput from "@/components/companyNameInput";
 import {useState} from "react";
 import ContactPersonNameInput from "@/components/contactPersonNameInput";
 import BelongingInput from "@/components/belongingInput";
-import StartDatePresenter from "@/components/startDatePresenter";
 import {makeMsgToAdjustSchedule} from "@/lib/apiUtil";
 import Loading from "@/components/loading";
 import PastDatePicker from "@/components/pastDatePicker";
-import pastDatePicker from "@/components/pastDatePicker";
 import Router from "next/router";
 
 // 下の型を満たす値が必要
@@ -24,7 +22,7 @@ import Router from "next/router";
 //     }
 //
 export default function AdjustSchedulePane() {
-    const [newDatesArray, setNewDatesArray] = useState([]);
+    const [newDatesArray, setNewDatesArray] = useState([{start_date: undefined , end_date: undefined}]);
     const [pastDate, setPastDate] = useState({start_date: 0, end_date: 0});
     const [companyName, setCompanyName] = useState('');
     const [contactPersonName, setContactPersonName] = useState('');
@@ -75,7 +73,7 @@ export default function AdjustSchedulePane() {
                 </div>
             </div>
             <div style={{display: 'flex', marginLeft: '10%'}}>
-                <div style={{display: "flex", padding: '2vh 2vh 2vh 1vh'}}>
+                <div style={{display: "flex", padding: '0 2vh'}}>
                     <PastDatePicker setter={setPastDate}/>
                 </div>
                 <div style={{
@@ -84,8 +82,7 @@ export default function AdjustSchedulePane() {
                     justifyContent: "center",
                     alignItems: "center"
                 }}>
-                    <StartDatePicker setter={setNewDatesArray}/>
-                    <StartDatePresenter newDatesArray={newDatesArray}/>
+                    <StartDatePicker setter={setNewDatesArray} newDatesArray={newDatesArray}/>
                 </div>
             </div>
             <CreateBtn onClick={submit}/>
